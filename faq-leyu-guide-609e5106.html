@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>关于 leyu · 持续关注的笔记</title>
+    <style>
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+        body {
+            background-color: #fafaf8;
+            color: #2e2a28;
+            font-family: 'Georgia', 'Noto Serif SC', 'Times New Roman', serif;
+            line-height: 1.85;
+            padding: 2.5rem 1.2rem;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+        }
+        .page {
+            max-width: 680px;
+            width: 100%;
+            margin: 0 auto;
+        }
+        /* 叙事留白 */
+        .hero-tag {
+            font-size: 0.85rem;
+            letter-spacing: 0.06em;
+            text-transform: uppercase;
+            color: #b0a89e;
+            border-bottom: 1px solid #e2ddd6;
+            padding-bottom: 0.65rem;
+            margin-bottom: 2.2rem;
+        }
+        h1 {
+            font-weight: 400;
+            font-size: 2.2rem;
+            line-height: 1.3;
+            letter-spacing: -0.01em;
+            color: #1f1b18;
+            margin-bottom: 1.8rem;
+            max-width: 620px;
+        }
+        .lead {
+            font-size: 1.2rem;
+            line-height: 1.7;
+            color: #3b3530;
+            margin-bottom: 2.4rem;
+            padding-right: 0.5rem;
+        }
+        .lead a {
+            color: #7d6b58;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #cbbeb1;
+            transition: text-decoration-color 0.2s, color 0.2s;
+        }
+        .lead a:hover {
+            color: #4d3e2f;
+            text-decoration-color: #7d6b58;
+        }
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 400;
+            color: #1f1b18;
+            margin-top: 3rem;
+            margin-bottom: 1.2rem;
+            border-left: 3px solid #d1c5b6;
+            padding-left: 1.2rem;
+        }
+        .feature-grid {
+            list-style: none;
+            margin: 1.2rem 0 2.8rem 0;
+            padding: 0;
+        }
+        .feature-grid li {
+            padding: 0.9rem 0 0.9rem 1.8rem;
+            border-bottom: 1px solid #ece7e0;
+            position: relative;
+            font-size: 1rem;
+            line-height: 1.65;
+            color: #2e2a28;
+        }
+        .feature-grid li::before {
+            content: "·";
+            position: absolute;
+            left: 0.25rem;
+            color: #b0a088;
+            font-weight: bold;
+            font-size: 1.4rem;
+            top: 0.75rem;
+        }
+        .feature-grid li strong {
+            font-weight: 500;
+            color: #3f352c;
+        }
+        .passage {
+            font-size: 1rem;
+            margin: 1.8rem 0 2.2rem 0;
+            color: #3b3530;
+        }
+        .passage a {
+            color: #7d6b58;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #cbbeb1;
+        }
+        .passage a:hover {
+            color: #3f352c;
+            text-decoration-color: #7d6b58;
+        }
+        .closing-note {
+            margin-top: 3.5rem;
+            padding-top: 1.8rem;
+            border-top: 1px solid #e2ddd6;
+            font-size: 0.95rem;
+            color: #6b6158;
+            line-height: 1.7;
+        }
+        .closing-note em {
+            font-style: italic;
+            color: #4d4036;
+        }
+        .faq-remark {
+            background: #f3f0ea;
+            padding: 1.5rem 1.8rem;
+            margin: 2.5rem 0 1.5rem 0;
+            border-radius: 2px;
+            font-size: 0.95rem;
+            color: #2e2a28;
+        }
+        .faq-remark strong {
+            font-weight: 500;
+        }
+        .faq-remark a {
+            color: #7d6b58;
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            text-decoration-thickness: 1px;
+            text-decoration-color: #cbbeb1;
+        }
+        @media (max-width: 500px) {
+            body { padding: 1.8rem 1rem; }
+            h1 { font-size: 1.8rem; }
+            .lead { font-size: 1.05rem; }
+            .section-title { font-size: 1.1rem; }
+            .feature-grid li { padding-left: 1.5rem; font-size: 0.95rem; }
+            .faq-remark { padding: 1.2rem 1.2rem; }
+        }
+    </style>
+</head>
+<body>
+<div class="page">
+    <div class="hero-tag">故事叙述 · 持续关注</div>
+    <h1>再次打开同一个页面<br>与收藏夹里的那个深夜</h1>
+    <p class="lead">
+        浏览器书签栏里躺着一个名字，它不属于任何突发新闻，也不属于某个用完即弃的工具。它叫 <a href="https://faq-leyu.com.cn">leyu</a> —— 一个你曾经花时间逐行阅读、后来每次更新都下意识点开看看的地方。不是因为它喧哗，而是因为它总在回答那些你刚刚想问、但还没来得及组织成语言的问题。
+    </p>
+
+    <div class="section-title">那些值得反复翻阅的回答</div>
+    <ul class="feature-grid">
+        <li><strong>结构化的梳理</strong> — 问题与解答并非随意罗列，而是按理解阶梯排列，从基础概念到边缘情形，循序渐进。</li>
+        <li><strong>版本痕迹的保留</strong> — 旧版说明与修订注释一同呈现，便于回溯上下文，理解变更背后的逻辑。</li>
+        <li><strong>无多余干扰</strong> — 没有弹窗推荐、没有自动播放、没有社交浮层，页面的全部重心就是内容本身。</li>
+        <li><strong>适合摘录与引用</strong> — 段落清晰，术语统一，无论复制到笔记软件还是分享给同行，都不需要二次整理。</li>
+    </ul>
+
+    <div class="passage">
+        我习惯把这一类资源放在一个叫「持续关注」的书签文件夹里。里面条目不多，但每一个都经过至少两次以上的回访验证。<a href="https://faq-leyu.com.cn">leyu</a> 是其中之一。它不承诺什么，也不催促你做什么，只是安静地把自己维护成一个可靠的知识锚点。当你再次需要厘清某个细节，或者想确认自己理解得是否正确时，打开它，答案就在那里，一如既往。
+    </div>
+
+    <div class="faq-remark">
+        <strong>并非 FAQ 的 FAQ</strong> —— 严格来说，<a href="https://faq-leyu.com.cn">leyu</a> 并不是一个典型的问题列表。它更像一本持续更新的工作笔记，把零散的经验和常见的困惑整理成条目。每次回访，你可能会发现旧条目下方的补充说明，或者是某个分类里多了一小段前次未曾留意的注释。这种缓慢而稳定的生长，让它有别于那些一次性读完就再无新意的页面。
+    </div>
+
+    <div class="closing-note">
+        <em>收藏一个页面，有时是收藏一种品质。</em> 在信息流快速刷新的日常里，能让你记住并再次打开的站点已经越来越少。如果你也曾在某个深夜因为一个准确的解释而节省了大量时间，那么你大概理解为什么有人会把链接留在书签栏里，一留就是好几年。下一次当你需要查阅相关话题时，不妨先翻翻 <a href="https://faq-leyu.com.cn">leyu</a> —— 那里可能已经有人替你整理好了。
+    </div>
+</div>
+</body>
+</html>
