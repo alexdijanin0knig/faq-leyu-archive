@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.5">
+  <title>斗牛游戏 · 简明指南</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body {
+      background: #f2f7f9;
+      font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+      line-height: 1.6;
+      color: #1b2e35;
+      padding: 1.5rem 1rem;
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+    }
+    .page {
+      max-width: 760px;
+      margin: 0 auto;
+      width: 100%;
+      flex: 1;
+    }
+    /* 网格卡片背景 */
+    .card-grid {
+      background: #ffffff;
+      border-radius: 24px;
+      box-shadow: 0 4px 16px rgba(0, 30, 40, 0.04);
+      padding: 2rem 1.8rem;
+      margin-bottom: 2rem;
+      position: relative;
+      overflow: hidden;
+    }
+    .card-grid::before {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background-image: 
+        linear-gradient(to right, rgba(32, 156, 160, 0.06) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(32, 156, 160, 0.06) 1px, transparent 1px);
+      background-size: 40px 40px;
+      pointer-events: none;
+      border-radius: 24px;
+    }
+    .card-grid > * {
+      position: relative;
+      z-index: 1;
+    }
+
+    h1 {
+      font-size: 2rem;
+      font-weight: 600;
+      letter-spacing: -0.02em;
+      color: #0d4047;
+      margin-bottom: 0.25rem;
+      line-height: 1.2;
+    }
+    .subhead {
+      font-size: 1rem;
+      color: #3c6a73;
+      border-left: 4px solid #209ca0;
+      padding-left: 1rem;
+      margin: 0.5rem 0 1.5rem 0;
+      font-weight: 400;
+    }
+
+    h2 {
+      font-size: 1.3rem;
+      font-weight: 500;
+      color: #11555e;
+      margin: 2rem 0 0.75rem 0;
+      letter-spacing: -0.01em;
+    }
+    p {
+      margin-bottom: 1.2rem;
+    }
+
+    /* 引用提示 */
+    .callout {
+      background: #e6f3f5;
+      border-radius: 16px;
+      padding: 1.2rem 1.5rem;
+      margin: 1.8rem 0;
+      border-left: 5px solid #209ca0;
+      font-size: 0.95rem;
+      color: #1b474e;
+    }
+    .callout strong {
+      color: #0b3e45;
+      font-weight: 600;
+    }
+
+    .feature-list {
+      list-style: none;
+      padding: 0;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 0.8rem;
+      margin: 1.2rem 0 1rem;
+    }
+    .feature-list li {
+      background: #f2fafb;
+      padding: 0.8rem 1rem;
+      border-radius: 14px;
+      font-size: 0.95rem;
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+      color: #1b4b52;
+    }
+    .feature-list li::before {
+      content: '▹';
+      color: #209ca0;
+      font-weight: 700;
+      font-size: 1.1rem;
+    }
+
+    .faq-item {
+      margin: 1.2rem 0;
+      padding: 1rem 1.2rem;
+      background: #f7fbfc;
+      border-radius: 16px;
+    }
+    .faq-item strong {
+      display: block;
+      color: #11555e;
+      font-weight: 600;
+      margin-bottom: 0.3rem;
+      font-size: 1rem;
+    }
+    .faq-item p {
+      margin-bottom: 0;
+      font-size: 0.95rem;
+    }
+
+    a {
+      color: #1c7f84;
+      text-decoration: none;
+      font-weight: 500;
+      border-bottom: 1px solid transparent;
+      transition: border-color 0.2s, color 0.2s;
+    }
+    a:hover {
+      color: #0a5b60;
+      border-bottom-color: #209ca0;
+    }
+
+    .visit-line {
+      margin-top: 2.2rem;
+      padding-top: 1.5rem;
+      border-top: 1px solid #d7e7ea;
+      font-size: 1rem;
+      text-align: center;
+      color: #2d626b;
+      font-weight: 400;
+    }
+
+    hr {
+      border: none;
+      border-top: 1px solid #d7e7ea;
+      margin: 1.8rem 0;
+    }
+
+    /* 移动端优化 */
+    @media (max-width: 480px) {
+      body {
+        padding: 0.8rem 0.6rem;
+      }
+      .card-grid {
+        padding: 1.5rem 1rem;
+        border-radius: 20px;
+      }
+      h1 {
+        font-size: 1.7rem;
+      }
+      .subhead {
+        font-size: 0.95rem;
+      }
+      .feature-list {
+        grid-template-columns: 1fr;
+        gap: 0.6rem;
+      }
+      .callout {
+        padding: 1rem 1.2rem;
+      }
+      .faq-item {
+        padding: 0.8rem 1rem;
+      }
+    }
+    @media (max-width: 360px) {
+      h1 {
+        font-size: 1.5rem;
+      }
+    }
+
+    /* footer 轻量 */
+    .footer-note {
+      text-align: center;
+      font-size: 0.85rem;
+      color: #7a9ba3;
+      margin-top: 1.5rem;
+      padding: 0.5rem 0;
+    }
+  </style>
+</head>
+<body>
+<div class="page">
+  <div class="card-grid">
+
+    <h1>斗牛游戏 · 简明指南</h1>
+    <div class="subhead">从基础到提醒，一篇说清</div>
+
+    <p>如果你刚开始接触斗牛游戏，可能会被它的规则和节奏弄得有些迟疑。其实它并没有那么复杂——一副牌，几个固定步骤，剩下的更多是关于判断与节奏。这里不打算堆砌术语，而是从实际操作的角度，给你一份可以参照的路线。</p>
+
+    <h2>规则速览</h2>
+    <p>斗牛游戏通常由 4 到 6 人参与，每人发五张牌，将其中三张组合成 10 或 20 或 30 的倍数（即“有牛”），剩余两张点数之和除以 10 取余数，就是你的“牛几”。若五张牌都无法组成 10 的倍数，则为“无牛”。特别地，若五张牌都是 J、Q、K 或 10 这样的“公牌”，则组成“五花牛”或“五小牛”，属于高倍牌型。<br>
+    比较时先看有牛 / 无牛，有牛者按牛数大小比较，牛九大于牛八，以此类推；相同牛数则比单张最大牌面。听起来散碎，玩过两三局就能顺手。</p>
+
+    <div class="callout">
+      <strong>💡 一点提醒：</strong> 不管在哪个平台，都建议先花几分钟理解底注和倍数房间的区别。快速模式虽然过瘾，但容易忽略节奏。
+    </div>
+
+    <h2>特点与场景</h2>
+    <p>斗牛游戏最吸引人的地方在于它天然带节奏——每一局的时间很短，从发牌到开牌不过几十秒。这种紧凑感让它适合碎片时间，等人、通勤、午休都能随时打一局。同时它的策略主要集中在配牌选择与跟进时机上，不需要记忆复杂的牌型序列，上手后反而有余裕观察其他玩家的出牌习惯。</p>
+
+    <ul class="feature-list">
+      <li>每局用时短，适合快节奏</li>
+      <li>配牌思路清晰，不依赖记牌</li>
+      <li>倍数设定增加变数</li>
+      <li>适合 3–6 人小局</li>
+    </ul>
+
+    <h2>FAQ 摘要</h2>
+    <div class="faq-item">
+      <strong>有牛和无牛哪个更常见？</strong>
+      <p>从概率上看，大约每三局会出现一次无牛。有牛概率更高，但牛七以上出现频率明显降低。所以遇到牛八、牛九可以适当提高倍数。</p>
+    </div>
+    <div class="faq-item">
+      <strong>五花牛和炸弹哪个大？</strong>
+      <p>不同房间规则略有区别。通常五花牛（五张 J/Q/K/10）大于普通炸弹（四张相同），但具体以房间说明为准。不确定时建议先看规则页。</p>
+    </div>
+    <div class="faq-item">
+      <strong>为什么有时候会提示“未满人数”？</strong>
+      <p>大部分斗牛游戏房间需要至少 3 人才会发牌。如果长时间凑不齐人数，可以刷新匹配或换一个活跃时段再试。</p>
+    </div>
+
+    <hr>
+
+    <p>如果你打算试试，可以从一个低倍房间开始，感受配牌和跟注的节奏。大多数人两三局就能理解流程。同时，记得在稳定的网络下进行——斗牛游戏对延迟比较敏感，掉线重连可能会错过一局。<br>
+    另外，任何游戏都建议设置一个投入上限，保持轻松的心态比单纯追求牌型更有意思。</p>
+
+    <div class="visit-line">
+      了解更多关于 <a href="https://main-douniugame.com">斗牛游戏</a> 的基础与进阶内容，访问主站即可。
+    </div>
+
+    <div class="footer-note">
+      以简明的方式，分享一点经验。
+    </div>
+
+  </div>
+</div>
+</body>
+</html>
